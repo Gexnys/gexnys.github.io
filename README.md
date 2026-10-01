@@ -491,7 +491,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
     <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
   </div>
   <div class="productInfo">
-    <div class="eyebrow">AMPLIFY YOUR CAR AUDIO</div>
+    <div class="eyebrow">DESTROY YOUR CAR </div>
     <h2>LORE AUDIO X8</h2>
     <p>Rakipleri geride bırakmak için özel olarak üretildi. Yüksek ısılara dayanıklı ses bobini ve esnek örümcek yapısı sayesinde uzun süreli yüksek güç altındaki performansını korur.</p>
     <div class="price">$2999</div>
