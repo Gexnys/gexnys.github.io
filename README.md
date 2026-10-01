@@ -371,7 +371,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
       <a class="btn" href="#x6" style="justify-content: center; margin-top: 15px;">İNCELE</a>
     </div>
 
-    <div class="x-card">
+  <div class="x-card">
       <div>
         <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833129928-cd555ade-82b1-4157-b288-c7f7f14fc03e.png" alt="LORE AUDIO X7 Subwoofer">
         <h3>X7 SUBWOOFER</h3>
@@ -385,7 +385,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
       <a class="btn" href="#x7" style="justify-content: center; margin-top: 15px;">İNCELE</a>
     </div>
 
-    <div class="x-card featured">
+   <div class="x-card featured">
       <div class="x-badge">FLAGSHIP</div>
       <div>
         <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
