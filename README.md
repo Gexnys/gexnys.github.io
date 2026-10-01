@@ -2,38 +2,38 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LORE AUDIO</title>
 <meta name="description" content="LORE AUDIO X Series — 15,000 RMS / 20,000 WATT yüksek performanslı subwooferlar.">
 <style>
 :root{--bg:#050505;--panel:#0b0b0d;--line:#242428;--red:#ff1838;--red2:#ff4b61;--white:#f5f5f5;--muted:#929298}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;width:100%}
-body{background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;overflow-x:hidden;width:100%;min-width:100vw}
+body{background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;overflow-x:hidden;width:100%}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(255,24,56,.09),transparent 35%),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,80px 80px;z-index:-1}
 a{color:inherit;text-decoration:none}
-.nav{height:78px;position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(5,5,5,.65);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);width:100%}
+.nav{height:78px;position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.65);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);width:100%}
 .logo{font-size:21px;font-weight:900;letter-spacing:.18em}.logo span{color:var(--red)}
 .navlinks{display:flex;gap:32px;color:#aaa;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.navlinks a:hover{color:#fff}
 .cart{border:1px solid #333;padding:11px 17px;border-radius:999px;font-size:11px;letter-spacing:.12em}.cart b{color:var(--red)}
-.hero{min-height:100vh;padding:150px 4vw 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;width:100%;max-width:1600px;margin:0 auto}
+.hero{min-height:100vh;padding:150px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;width:100%}
 .eyebrow{color:var(--red);font-size:11px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:22px}
 h1{font-size:clamp(64px,10vw,150px);line-height:.82;letter-spacing:-.075em;font-weight:950}
 h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
-.hero p{max-width:600px;margin:34px 0;color:#aaa;line-height:1.75;font-size:16px}
+.hero p{max-width:100%;margin:34px 0;color:#aaa;line-height:1.75;font-size:15px}
 .btn{display:inline-flex;align-items:center;gap:15px;background:var(--red);padding:16px 22px;border-radius:4px;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,24,56,.25)}
 .heroVisual{height:570px;position:relative;display:grid;place-items:center;width:100%}
 .glow{position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,24,56,.18),transparent 65%);filter:blur(18px)}
 
-.section{padding:130px 4vw;border-top:1px solid #161619;width:100%;max-width:1600px;margin:0 auto}
+.section{padding:130px 5vw;border-top:1px solid #161619;width:100%}
 .sectionHead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
-.sectionHead h2{font-size:clamp(40px,6vw,86px);letter-spacing:-.06em;line-height:.9}.sectionHead p{max-width:400px;color:#888;line-height:1.7;font-size:13px}
-.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%;max-width:1600px;margin:0 auto}
+.sectionHead h2{font-size:clamp(40px,6vw,86px);letter-spacing:-.06em;line-height:.9}.sectionHead p{max-width:500px;color:#888;line-height:1.7;font-size:13px}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%}
 .spec{padding:32px 24px;border-right:1px solid var(--line)}.spec:last-child{border-right:0}.spec strong{font-size:42px;letter-spacing:-.05em}.spec small{display:block;color:#777;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:8px}
 
-.explodeWrap{height:250vh;position:relative;width:100%;max-width:1600px;margin:0 auto}
+.explodeWrap{height:250vh;position:relative;width:100%}
 .sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.explodeTitle{position:absolute;left:4vw;top:16vh;z-index:5}.explodeTitle h2{font-size:clamp(45px,7vw,100px);line-height:.82;letter-spacing:-.06em}.explodeTitle p{color:#888;margin-top:20px;max-width:330px;font-size:13px;line-height:1.7}
+.explodeTitle{position:absolute;left:5vw;top:16vh;z-index:5}.explodeTitle h2{font-size:clamp(45px,7vw,100px);line-height:.82;letter-spacing:-.06em}.explodeTitle p{color:#888;margin-top:20px;max-width:330px;font-size:13px;line-height:1.7}
 .explode{width:min(450px,65vw);aspect-ratio:1;position:relative;transform:scale(calc(0.85 + var(--p)*0.15))}
 
 .part{
@@ -125,12 +125,11 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
 .l-basket{left:-20%; top:72%}
 .l-motor{right:-20%; top:85%}
 
-.explodeInfo{position:absolute;right:4vw;bottom:15vh;text-align:right;color:#777;font-size:11px;letter-spacing:.14em}.explodeInfo b{display:block;color:#fff;font-size:16px;margin-top:8px}
+.explodeInfo{position:absolute;right:5vw;bottom:15vh;text-align:right;color:#777;font-size:11px;letter-spacing:.14em}.explodeInfo b{display:block;color:#fff;font-size:16px;margin-top:8px}
 
 .x-promo-banner {
   width: 100%;
-  max-width: 100%;
-  margin: 0 auto 50px auto;
+  margin: 0 0 50px 0;
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
@@ -201,7 +200,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
 
 .x-card img {
   width: 100%;
-  max-width: 280px;
+  max-width: 100%;
   margin: 0 auto 20px;
   display: block;
   filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
@@ -239,36 +238,30 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
   color: #fff;
 }
 
-.product{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start}
+.product{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start;width:100%}
 .productImage{border:1px solid #222;background:linear-gradient(145deg,#0d0d0f,#050505);padding:40px;min-height:580px;display:grid;place-items:center;width:100%}
 .productInfo .eyebrow{margin-bottom:12px}.productInfo h2{font-size:clamp(48px,6vw,90px);letter-spacing:-.07em}.productInfo>p{color:#999;line-height:1.8;margin:25px 0 35px}
 .price{font-size:54px;font-weight:900;letter-spacing:-.06em}.stock{display:flex;align-items:center;gap:10px;margin:18px 0 30px;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:.12em}.dot{width:8px;height:8px;border-radius:50%;background:#c26c1c;box-shadow:0 0 12px #c26c1c}
 .qty{display:flex;gap:10px;margin-bottom:12px}.qty button{width:45px;height:45px;border:1px solid #333;background:#0b0b0c;color:#fff;font-size:18px;cursor:pointer}.qty span{width:55px;display:grid;place-items:center;border:1px solid #333}.buy{width:100%;justify-content:center;border:0;cursor:pointer}
 .notice{font-size:10px;color:#666;margin-top:15px;line-height:1.6}
-.footer{padding:70px 4vw;border-top:1px solid #1c1c20;display:flex;justify-content:space-between;color:#666;font-size:10px;letter-spacing:.14em;text-transform:uppercase;max-width:1600px;margin:0 auto}
+.footer{padding:70px 5vw;border-top:1px solid #1c1c20;display:flex;justify-content:space-between;color:#666;font-size:10px;letter-spacing:.14em;text-transform:uppercase;width:100%}
 
 .realX8{
   width:100%;
   height:auto;
-  max-width:100%;
   display:block;
   object-fit:contain;
   border-radius:6px;
   filter:drop-shadow(0 35px 55px rgba(0,0,0,.72));
   transition:transform .45s ease,filter .45s ease;
 }
-.heroVisual .realX8{max-width:100%;transform:scale(1.03)}
+.heroVisual .realX8{width:100%;transform:scale(1.03)}
 .heroVisual .realX8:hover{transform:scale(1.06);filter:drop-shadow(0 40px 70px rgba(255,24,56,.16))}
-.productImage .realX8{max-width:100%}
-
-@media(max-width:1024px){
-  .hero{grid-template-columns:1fr;padding-top:130px;text-align:center}
-  .hero p{margin:34px auto}
-  .x-series-grid{grid-template-columns:1fr 1fr}
-}
+.productImage .realX8{width:100%}
 
 @media(max-width:850px){
   .navlinks{display:none}
+  .hero{grid-template-columns:1fr;padding-top:130px}
   .heroVisual{height:430px}
   .specs{grid-template-columns:1fr 1fr}
   .spec:nth-child(2){border-right:0}
@@ -277,6 +270,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
   .explodeInfo{right:5vw;bottom:7vh}
   .product{grid-template-columns:1fr;gap:35px}
   .productImage{min-height:420px}
+  .heroVisual .realX8{width:100%}
   .x-series-grid{grid-template-columns:1fr}
   .footer{flex-direction:column;gap:18px}
 }
@@ -491,7 +485,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
     <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
   </div>
   <div class="productInfo">
-    <div class="eyebrow">DESTROY YOUR CAR </div>
+    <div class="eyebrow">DESTROY YOUR CAR</div>
     <h2>LORE AUDIO X8</h2>
     <p>Rakipleri geride bırakmak için özel olarak üretildi. Yüksek ısılara dayanıklı ses bobini ve esnek örümcek yapısı sayesinde uzun süreli yüksek güç altındaki performansını korur.</p>
     <div class="price">$2999</div>
