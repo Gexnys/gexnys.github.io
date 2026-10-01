@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -12,11 +12,13 @@ html{scroll-behavior:smooth;width:100%}
 body{background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;overflow-x:hidden;width:100%}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(255,24,56,.09),transparent 35%),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,80px 80px;z-index:-1}
 a{color:inherit;text-decoration:none}
+
 .nav{height:78px;position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.65);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);width:100%}
 .logo{font-size:21px;font-weight:900;letter-spacing:.18em}.logo span{color:var(--red)}
 .navlinks{display:flex;gap:32px;color:#aaa;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.navlinks a:hover{color:#fff}
 .cart{border:1px solid #333;padding:11px 17px;border-radius:999px;font-size:11px;letter-spacing:.12em}.cart b{color:var(--red)}
-.hero{min-height:100vh;padding:150px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;width:100%}
+
+.hero{min-height:100vh;padding:150px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;width:100%;max-width:none!important;margin:0!important}
 .eyebrow{color:var(--red);font-size:11px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:22px}
 h1{font-size:clamp(64px,10vw,150px);line-height:.82;letter-spacing:-.075em;font-weight:950}
 h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
@@ -25,10 +27,10 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
 .heroVisual{height:570px;position:relative;display:grid;place-items:center;width:100%}
 .glow{position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,24,56,.18),transparent 65%);filter:blur(18px)}
 
-.section{padding:130px 5vw;border-top:1px solid #161619;width:100%}
+.section{padding:130px 5vw;border-top:1px solid #161619;width:100%;max-width:none!important;margin:0!important}
 .sectionHead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
 .sectionHead h2{font-size:clamp(40px,6vw,86px);letter-spacing:-.06em;line-height:.9}.sectionHead p{max-width:500px;color:#888;line-height:1.7;font-size:13px}
-.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%;max-width:none!important;margin:0!important}
 .spec{padding:32px 24px;border-right:1px solid var(--line)}.spec:last-child{border-right:0}.spec strong{font-size:42px;letter-spacing:-.05em}.spec small{display:block;color:#777;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:8px}
 
 .explodeWrap{height:250vh;position:relative;width:100%}
@@ -371,7 +373,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
       <a class="btn" href="#x6" style="justify-content: center; margin-top: 15px;">İNCELE</a>
     </div>
 
-  <div class="x-card">
+    <div class="x-card">
       <div>
         <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833129928-cd555ade-82b1-4157-b288-c7f7f14fc03e.png" alt="LORE AUDIO X7 Subwoofer">
         <h3>X7 SUBWOOFER</h3>
@@ -385,7 +387,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
       <a class="btn" href="#x7" style="justify-content: center; margin-top: 15px;">İNCELE</a>
     </div>
 
-   <div class="x-card featured">
+    <div class="x-card featured">
       <div class="x-badge">FLAGSHIP</div>
       <div>
         <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
@@ -485,7 +487,7 @@ h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
     <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
   </div>
   <div class="productInfo">
-    <div class="eyebrow">DESTROY YOUR CAR</div>
+    <div class="eyebrow">DESTROY YOUR CAR AUDIO</div>
     <h2>LORE AUDIO X8</h2>
     <p>Rakipleri geride bırakmak için özel olarak üretildi. Yüksek ısılara dayanıklı ses bobini ve esnek örümcek yapısı sayesinde uzun süreli yüksek güç altındaki performansını korur.</p>
     <div class="price">$2999</div>
