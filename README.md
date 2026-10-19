@@ -1,580 +1,213 @@
 
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LORE AUDIO</title>
-<meta name="description" content="LORE AUDIO X Series — 15,000 RMS / 20,000 WATT yüksek performanslı subwooferlar.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Windows 12 — Wild Berry Ultimate Edition</title>
 <style>
-:root{--bg:#050505;--panel:#0b0b0d;--line:#242428;--red:#ff1838;--red2:#ff4b61;--white:#f5f5f5;--muted:#929298}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;width:100%}
-body{background:var(--bg);color:var(--white);font-family:Inter,Arial,Helvetica,sans-serif;overflow-x:hidden;width:100%}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(255,24,56,.09),transparent 35%),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,80px 80px;z-index:-1}
-a{color:inherit;text-decoration:none}
-
-.nav{height:78px;position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.65);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07);width:100%}
-.logo{font-size:21px;font-weight:900;letter-spacing:.18em}.logo span{color:var(--red)}
-.navlinks{display:flex;gap:32px;color:#aaa;font-size:12px;letter-spacing:.12em;text-transform:uppercase}.navlinks a:hover{color:#fff}
-.cart{border:1px solid #333;padding:11px 17px;border-radius:999px;font-size:11px;letter-spacing:.12em}.cart b{color:var(--red)}
-
-.hero{min-height:100vh;padding:150px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;width:100%;max-width:none!important;margin:0!important}
-.eyebrow{color:var(--red);font-size:11px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:22px}
-h1{font-size:clamp(64px,10vw,150px);line-height:.82;letter-spacing:-.075em;font-weight:950}
-h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
-.hero p{max-width:100%;margin:34px 0;color:#aaa;line-height:1.75;font-size:15px}
-.btn{display:inline-flex;align-items:center;gap:15px;background:var(--red);padding:16px 22px;border-radius:4px;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,24,56,.25)}
-.heroVisual{height:570px;position:relative;display:grid;place-items:center;width:100%}
-.glow{position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(255,24,56,.18),transparent 65%);filter:blur(18px)}
-
-.section{padding:130px 5vw;border-top:1px solid #161619;width:100%;max-width:none!important;margin:0!important}
-.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
-.sectionHead h2{font-size:clamp(40px,6vw,86px);letter-spacing:-.06em;line-height:.9}.sectionHead p{max-width:500px;color:#888;line-height:1.7;font-size:13px}
-.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);width:100%;max-width:none!important;margin:0!important}
-.spec{padding:32px 24px;border-right:1px solid var(--line)}.spec:last-child{border-right:0}.spec strong{font-size:42px;letter-spacing:-.05em}.spec small{display:block;color:#777;font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-top:8px}
-
-.explodeWrap{height:250vh;position:relative;width:100%}
-.sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.explodeTitle{position:absolute;left:5vw;top:16vh;z-index:5}.explodeTitle h2{font-size:clamp(45px,7vw,100px);line-height:.82;letter-spacing:-.06em}.explodeTitle p{color:#888;margin-top:20px;max-width:330px;font-size:13px;line-height:1.7}
-.explode{width:min(450px,65vw);aspect-ratio:1;position:relative;transform:scale(calc(0.85 + var(--p)*0.15))}
-
-.part{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%) translateY(calc(var(--p) * var(--dy))) scale(calc(1 - var(--p) * 0.05));
-  transition:transform 0.05s linear;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.p-frame{
-  width:100%; height:100%;
-  border-radius:50%;
-  border:24px solid #141416;
-  box-shadow:inset 0 0 0 4px #333, 0 0 25px rgba(0,0,0,0.8);
-  background:radial-gradient(circle, transparent 58%, #1c1c20 60%, #0a0a0c 100%);
-}
-
-.p-cone{
-  width:80%; height:80%;
-  border-radius:50%;
-  background:radial-gradient(circle at 50% 50%, #151518 0%, #28282d 35%, #0d0d0e 70%);
-  border:4px solid #2a2a30;
-  box-shadow:inset 0 0 30px #000;
-}
-
-.p-cap{
-  width:36%; height:36%;
-  border-radius:50%;
-  background:radial-gradient(circle at 35% 30%, #3a3a40, #111 60%, #050507 90%);
-  border:2px solid #555;
-  box-shadow:0 10px 25px rgba(0,0,0,0.9);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.cap-brand{
-  color:#fff;
-  font-weight:900;
-  font-size:clamp(10px, 1.8vw, 14px);
-  letter-spacing:0.15em;
-  text-shadow:0 0 8px rgba(255,24,56,0.6);
-  user-select:none;
-}
-.cap-brand span{color:var(--red)}
-
-.p-spider{
-  width:65%; height:65%;
-  border-radius:50%;
-  border:8px dashed #ff1838;
-  background:radial-gradient(circle, transparent 30%, rgba(255,24,56,0.25) 31%, transparent 70%);
-  box-shadow:0 0 15px rgba(0,0,0,0.5);
-}
-
-.p-coil{
-  width:28%; height:32%;
-  border-radius:4px;
-  border:4px solid #ff1838;
-  background:repeating-linear-gradient(0deg, #ff1838, #ff1838 4px, #ff1838 5px, #5c3a19 7px);
-  box-shadow:0 0 20px rgba(212,175,55,0.3);
-}
-
-.p-basket{
-  width:88%; height:88%;
-  border-radius:50%;
-  border:12px solid #1f1f24;
-  border-left-color:transparent;
-  border-right-color:transparent;
-  transform:translate(-50%, -50%) translateY(calc(var(--p) * var(--dy))) rotate(45deg);
-}
-
-.p-motor{
-  width:48%; height:48%;
-  border-radius:50%;
-  background:radial-gradient(circle, #2a2a2e 0%, #0f0f12 70%, #000 100%);
-  border:8px solid #222226;
-  box-shadow:0 0 30px #000;
-}
-
-.label{position:absolute;color:#888;font-size:10px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
-.l-cap{left:-20%; top:20%}
-.l-cone{right:-25%; top:32%}
-.l-spider{left:-25%; top:48%}
-.l-coil{right:-25%; top:60%}
-.l-basket{left:-20%; top:72%}
-.l-motor{right:-20%; top:85%}
-
-.explodeInfo{position:absolute;right:5vw;bottom:15vh;text-align:right;color:#777;font-size:11px;letter-spacing:.14em}.explodeInfo b{display:block;color:#fff;font-size:16px;margin-top:8px}
-
-.x-promo-banner {
-  width: 100%;
-  margin: 0 0 50px 0;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #08080a;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.x-promo-banner:hover {
-  border-color: var(--red);
-  box-shadow: 0 20px 45px rgba(255, 24, 56, 0.15);
-}
-
-.x-promo-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-.x-series-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  width: 100%;
-}
-
-.x-card {
-  background: linear-gradient(145deg, #0d0d0f, #050505);
-  border: 1px solid var(--line);
-  padding: 35px 25px;
-  border-radius: 6px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.x-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--red);
-  box-shadow: 0 15px 35px rgba(255, 24, 56, 0.15);
-}
-
-.x-card.featured {
-  border-color: var(--red);
-  background: linear-gradient(145deg, #12090c, #050505);
-}
-
-.x-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: var(--red);
-  color: #fff;
-  font-size: 9px;
-  font-weight: 900;
-  padding: 4px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.x-card img {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto 20px;
-  display: block;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.8));
-  transition: transform 0.3s ease;
-}
-
-.x-card:hover img {
-  transform: scale(1.05);
-}
-
-.x-card h3 {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  margin-bottom: 15px;
-}
-
-.x-specs-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.x-specs-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 13px;
-  color: #aaa;
-  display: flex;
-  justify-content: space-between;
-}
-
-.x-specs-list li strong {
-  color: #fff;
-}
-
-.product{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start;width:100%}
-.productImage{border:1px solid #222;background:linear-gradient(145deg,#0d0d0f,#050505);padding:40px;min-height:580px;display:grid;place-items:center;width:100%}
-.productInfo .eyebrow{margin-bottom:12px}.productInfo h2{font-size:clamp(48px,6vw,90px);letter-spacing:-.07em}.productInfo>p{color:#999;line-height:1.8;margin:25px 0 35px}
-.price{font-size:54px;font-weight:900;letter-spacing:-.06em}.stock{display:flex;align-items:center;gap:10px;margin:18px 0 30px;font-size:11px;color:#aaa;text-transform:uppercase;letter-spacing:.12em}.dot{width:8px;height:8px;border-radius:50%;background:#c26c1c;box-shadow:0 0 12px #c26c1c}
-.qty{display:flex;gap:10px;margin-bottom:12px}.qty button{width:45px;height:45px;border:1px solid #333;background:#0b0b0c;color:#fff;font-size:18px;cursor:pointer}.qty span{width:55px;display:grid;place-items:center;border:1px solid #333}.buy{width:100%;justify-content:center;border:0;cursor:pointer}
-.notice{font-size:10px;color:#666;margin-top:15px;line-height:1.6}
-.footer{padding:70px 5vw;border-top:1px solid #1c1c20;display:flex;justify-content:space-between;color:#666;font-size:10px;letter-spacing:.14em;text-transform:uppercase;width:100%}
-
-.realX8{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  border-radius:6px;
-  filter:drop-shadow(0 35px 55px rgba(0,0,0,.72));
-  transition:transform .45s ease,filter .45s ease;
-}
-.heroVisual .realX8{width:100%;transform:scale(1.03)}
-.heroVisual .realX8:hover{transform:scale(1.06);filter:drop-shadow(0 40px 70px rgba(255,24,56,.16))}
-.productImage .realX8{width:100%}
-
-@media(max-width:850px){
-  .navlinks{display:none}
-  .hero{grid-template-columns:1fr;padding-top:130px}
-  .heroVisual{height:430px}
-  .specs{grid-template-columns:1fr 1fr}
-  .spec:nth-child(2){border-right:0}
-  .spec:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .explodeTitle{top:10vh;left:5vw}
-  .explodeInfo{right:5vw;bottom:7vh}
-  .product{grid-template-columns:1fr;gap:35px}
-  .productImage{min-height:420px}
-  .heroVisual .realX8{width:100%}
-  .x-series-grid{grid-template-columns:1fr}
-  .footer{flex-direction:column;gap:18px}
-}
+:root{--accent:#ff2a7a;--glow:rgba(255,42,122,.4);--glass:rgba(18,9,30,.78);--border:rgba(255,255,255,.15);--text:#fff}
+*{box-sizing:border-box;margin:0;font-family:"Segoe UI",system-ui,sans-serif;user-select:none}
+html,body{height:100%;overflow:hidden;color:var(--text);background:#09020f}
+body{background:radial-gradient(ellipse at 18% 15%,#ff2a75 0,#3a0050 38%,#0d001a 78%);transition:background .6s}
+button,input,textarea{font:inherit}button{cursor:pointer;color:white;border:1px solid #ffffff22;background:#ffffff12;border-radius:10px;padding:8px 12px}button:hover{background:#ffffff25;border-color:var(--accent)}
+#boot{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 45%,#260b35,#06020c 58%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .9s,visibility .9s}
+#boot.hide{opacity:0;visibility:hidden;pointer-events:none}
+.boot-mark{width:112px;height:112px;position:relative;display:grid;place-items:center;animation:bootFloat 2.6s ease-in-out infinite}
+.boot-mark svg{width:76px;filter:drop-shadow(0 0 22px var(--glow));animation:markPulse 2.3s ease-in-out infinite}
+.boot-ring{position:absolute;inset:0;border:1px solid #ffffff16;border-radius:31px;transform:rotate(45deg);box-shadow:0 0 40px var(--glow),inset 0 0 25px #ff2a7a10;animation:ringSpin 8s linear infinite}
+.boot-ring:before,.boot-ring:after{content:"";position:absolute;border-radius:50%;width:7px;height:7px;background:#00f2fe;box-shadow:0 0 18px #00f2fe}
+.boot-ring:before{top:10px;left:10px}.boot-ring:after{right:10px;bottom:10px;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+.boot-name{margin-top:35px;font-size:13px;letter-spacing:7px;color:#ffffffb8;text-shadow:0 0 22px var(--glow)}
+@keyframes ringSpin{to{transform:rotate(405deg)}}@keyframes bootFloat{50%{transform:translateY(-7px)}}@keyframes markPulse{50%{transform:scale(1.06);opacity:.8}}
+#desktop{position:absolute;inset:0 0 72px;padding:18px;display:flex;flex-flow:column wrap;align-content:flex-start;gap:12px}
+.dicon{width:88px;height:90px;border:1px solid transparent;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;cursor:pointer;background:#ffffff03;transition:.2s}
+.dicon:hover{background:#ffffff18;border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 25px var(--glow)}
+.dicon b{font-size:31px;font-weight:400}.dicon span{font-size:11px;text-align:center;text-shadow:0 1px 4px #000}
+.widget{position:absolute;right:22px;width:245px;padding:15px;border:1px solid var(--border);border-radius:18px;background:var(--glass);backdrop-filter:blur(24px);box-shadow:0 12px 35px #0005;z-index:3;cursor:move}
+.widget h4{font-size:12px;color:#00f2fe;margin-bottom:10px}.widget small{font-size:11px;color:#ffffffb0}.widget input,.widget textarea{background:transparent;color:white;border:0;outline:0;width:100%;resize:vertical}
+#weather{top:22px}#performance{top:160px}#quicknote{top:305px}
+#taskwrap{position:fixed;bottom:10px;left:0;right:0;z-index:10000;display:flex;justify-content:center;pointer-events:none}
+#taskbar{pointer-events:auto;min-height:54px;padding:7px 12px;display:flex;align-items:center;gap:8px;background:var(--glass);backdrop-filter:blur(30px);border:1px solid var(--border);border-radius:22px;box-shadow:0 10px 40px #0008}
+#startbtn{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--accent),#8e00ff);cursor:pointer;box-shadow:0 0 15px var(--glow)}
+#tbapps{display:flex;gap:6px}.tbapp{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#ffffff0d;cursor:pointer}.tbapp.active{border-bottom:3px solid var(--accent)}
+#clock{font-size:12px;padding:0 7px;white-space:nowrap;cursor:pointer}
+#startmenu,#quick{position:fixed;z-index:9999;display:none;background:var(--glass);backdrop-filter:blur(32px);border:1px solid var(--border);box-shadow:0 20px 60px #0009;border-radius:24px;padding:20px}
+#startmenu{width:min(570px,94vw);height:min(570px,78vh);bottom:75px;left:50%;transform:translateX(-50%);flex-direction:column}
+#startmenu.show{display:flex}#quick{bottom:75px;right:18px;width:300px}#quick.show{display:block}
+#startsearch{width:100%;padding:12px 14px;border-radius:12px;background:#ffffff12;border:1px solid var(--border);color:white;outline:none;margin-bottom:16px}
+#appgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;overflow:auto}
+.startapp{min-height:80px;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;border-radius:13px;background:#ffffff08;cursor:pointer;font-size:11px}
+.startapp b{font-size:25px;font-weight:400}.startapp:hover{background:#ffffff20}
+#startfooter{margin-top:auto;border-top:1px solid #ffffff1c;padding-top:14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.window{position:absolute;z-index:100;background:var(--glass);backdrop-filter:blur(30px);border:1px solid var(--border);border-radius:17px;box-shadow:0 20px 60px #0008,0 0 22px #ff2a7a16;display:flex;flex-direction:column;overflow:hidden;min-width:300px;min-height:220px;animation:winIn .22s ease-out}
+@keyframes winIn{from{opacity:0;transform:scale(.96) translateY(10px)}to{opacity:1;transform:scale(1)}}
+.window.min{display:none}.whead{height:43px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 12px;background:#ffffff08;border-bottom:1px solid #ffffff12;cursor:move}
+.wtitle{font-size:12px;font-weight:650}.wcontrols{display:flex;gap:7px}.wcontrols button{width:13px;height:13px;padding:0;border:0;border-radius:50%;font-size:0}.minb{background:#ffbd2e}.maxb{background:#27c93f}.closeb{background:#ff5f56}
+.wbody{padding:13px;flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:10px}
+input,textarea,select{color:white;background:#ffffff10;border:1px solid #ffffff25;border-radius:9px;padding:9px;outline:none}textarea{resize:vertical}
+.row{display:flex;gap:8px;align-items:center}.grow{flex:1;min-width:0}
+.browserbar{display:flex;gap:7px}.browserbar input{flex:1;min-width:0}.browserview{flex:1;min-height:180px;width:100%;border:1px solid #ffffff20;border-radius:12px;background:white}
+.browserhint{font-size:11px;color:#ffffffa6;line-height:1.5}
+.browser-home{flex:1;min-height:230px;border:1px solid #ffffff20;border-radius:16px;padding:24px;background:radial-gradient(circle at 50% 0%,#4b124f,#130b20 65%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center}
+.browser-logo{font-size:42px;filter:drop-shadow(0 0 20px var(--glow))}.browser-search{display:flex;width:min(620px,100%);gap:8px}.browser-search input{flex:1;min-width:0;background:#ffffff13;border-radius:24px;padding:13px 17px}.browser-shortcuts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.browser-shortcuts button{min-width:110px}.browser-status{font-size:11px;color:#ffffff90;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}.browser-history{display:flex;gap:6px;flex-wrap:wrap}.permission-overlay{position:fixed;inset:0;background:#05010bc9;backdrop-filter:blur(12px);z-index:200000;display:none;align-items:center;justify-content:center;padding:18px}.permission-overlay.show{display:flex}.permission-card{width:min(440px,96vw);padding:24px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(145deg,#281137,#100817);box-shadow:0 25px 80px #000b}.permission-card h2{margin-bottom:10px}.permission-card p{font-size:13px;color:#ffffffb5;line-height:1.6;margin:8px 0 16px}.permission-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.permission-actions .accent{background:var(--accent)}.notice-item{padding:12px;border:1px solid #ffffff18;background:#ffffff08;border-radius:12px;margin-top:8px;font-size:12px}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.card{padding:14px;border:1px solid #ffffff18;background:#ffffff08;border-radius:13px;cursor:pointer}.card:hover{border-color:var(--accent);background:#ffffff14}.card strong{display:block;margin-bottom:6px}.muted{font-size:11px;color:#ffffff9c}
+.term{background:#08020f;color:#00f2fe;font:12px/1.6 Consolas,monospace;white-space:pre-wrap;overflow:auto;flex:1;padding:12px;border-radius:10px;min-height:150px}
+.calcgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;flex:1}.calcgrid button{font-size:18px}.accent{background:var(--accent)}
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);padding:10px 16px;background:#170d24;border:1px solid var(--border);border-radius:12px;z-index:100000;display:none;font-size:12px}
+@media(max-width:650px){.widget{display:none}#taskbar{max-width:96vw;gap:5px;padding:6px}#appgrid{grid-template-columns:repeat(3,1fr)}.window{max-width:96vw!important;max-height:82vh!important;left:2vw!important;top:5vh!important}.browserbar button{padding:7px}.dicon{width:74px;height:78px}}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a class="logo" href="#">LORE <span>AUDIO</span></a>
-  <div class="navlinks"><a href="#technology">Teknoloji</a><a href="#inside">İç Yapı</a><a href="#x-series">X Series</a><a href="#x6">X6</a><a href="#x7">X7</a><a href="#x8">X8</a></div>
-  <a class="cart" href="#x8">SEPET <b id="cartCount">0</b></a>
-</nav>
-
-<header class="hero">
-  <div>
-    <div class="eyebrow">ENGINEERED FOR PRESSURE</div>
-    <h1>X8<span>15000 RMS</span></h1>
-    <p>LORE AUDIO X8, yüksek SPL ve derin bas için tasarlanmış ekstrem sınıf bir subwoofer konseptidir. 15.000 RMS ve 20.000 WATT maksimum güç iddiasını taşıyan, ağır hizmet tipi motor ve yüksek excursion odaklı yapı.</p>
-    <a class="btn" href="#x8">X8'İ İNCELE →</a>
+<div id="boot">
+  <div class="boot-mark"><div class="boot-ring"></div><svg viewBox="0 0 100 100" aria-label="Windows"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff2a7a"/><stop offset=".52" stop-color="#00f2fe"/><stop offset="1" stop-color="#b000ff"/></linearGradient></defs><path fill="url(#g)" d="M7 12 46 7v39H7zM54 6l39-6v46H54zM7 54h39v39L7 88zM54 54h39v46l-39-6z"/></svg></div>
+  <div class="boot-name">WILD BERRY</div>
+</div>
+<div id="desktop">
+  <div class="dicon" onclick="openApp('pc')"><b>💻</b><span>Bu Bilgisayar</span></div>
+  <div class="dicon" onclick="openApp('browser')"><b>🌐</b><span>Berry Browser</span></div>
+  <div class="dicon" onclick="openApp('store')"><b>🛍️</b><span>Uygulama Merkezi</span></div>
+  <div class="dicon" onclick="openApp('files')"><b>📁</b><span>Dosyalar</span></div>
+  <div class="dicon" onclick="openApp('terminal')"><b>⌨️</b><span>Terminal</span></div>
+  <div class="dicon" onclick="openApp('editor')"><b>📝</b><span>Metin Editörü</span></div>
+  <div class="dicon" onclick="openApp('paint')"><b>🎨</b><span>Wild Paint</span></div>
+  <div class="dicon" onclick="openApp('calc')"><b>🧮</b><span>Hesap Makinesi</span></div>
+  <div class="dicon" onclick="openApp('media')"><b>🎵</b><span>Medya Merkezi</span></div>
+  <div class="dicon" onclick="openApp('calendar')"><b>📅</b><span>Takvim</span></div>
+  <div class="dicon" onclick="openApp('tasks')"><b>☑️</b><span>Görevler</span></div>
+  <div class="dicon" onclick="openApp('settings')"><b>⚙️</b><span>Ayarlar</span></div>
+  <div class="dicon" onclick="openApp('snake')"><b>🐍</b><span>Yılan Oyunu</span></div>
+  <div class="dicon" onclick="openApp('spacegame')"><b>🚀</b><span>Uzay Savaşı</span></div>
+</div>
+<div class="widget" id="weather"><h4>📍 HAVA DURUMU</h4><div style="font-size:29px;font-weight:750;color:var(--accent)">Wild Berry</div><small>Canlı hava bilgisi için tarayıcıda arama yapabilirsin.</small></div>
+<div class="widget" id="performance"><h4>⚡ SİSTEM PANELİ</h4><small>Arayüz durumu</small><div style="height:6px;background:#ffffff18;border-radius:9px;margin:8px 0"><div style="width:72%;height:100%;background:linear-gradient(90deg,var(--accent),#00f2fe);border-radius:9px"></div></div><small>Arayüz: Çalışıyor · Tema: Wild Berry</small></div>
+<div class="widget" id="quicknote"><h4>📌 HIZLI NOTLAR</h4><textarea id="widget-note" rows="3" placeholder="Notlarını buraya yaz..."></textarea></div>
+<div id="startmenu">
+  <input id="startsearch" placeholder="Uygulama ara..." oninput="filterApps(this.value)">
+  <div style="font-size:11px;color:var(--accent);font-weight:700;margin-bottom:10px;letter-spacing:1px">UYGULAMALAR</div>
+  <div id="appgrid"></div>
+  <div id="startfooter"><span>👤 WildBerry Kullanıcısı</span><button onclick="restartSystem()">⟳ Yeniden başlat</button></div>
+</div>
+<div id="quick">
+  <strong style="color:#00f2fe">Hızlı Ayarlar</strong>
+  <div class="cardgrid" style="margin-top:12px">
+    <div class="card quick-toggle" data-setting="wifi" onclick="toggleQuickSetting(this,'📶 Wi-Fi')">📶<br>Wi-Fi <small>Kapalı</small></div>
+    <div class="card quick-toggle" data-setting="bluetooth" onclick="toggleQuickSetting(this,'ᛒ Bluetooth')">ᛒ<br>Bluetooth <small>Kapalı</small></div>
+    <div class="card quick-toggle" data-setting="focus" onclick="toggleFocus(this)">🌙<br>Odak modu <small>Kapalı</small></div>
+    <div class="card quick-toggle" data-setting="night" onclick="toggleNight(this)">🌌<br>Gece ışığı <small>Kapalı</small></div>
+    <div class="card" onclick="openApp('settings')">⚙️<br>Ayarlar</div>
+    <div class="card" onclick="openApp('privacy')">🛡️<br>Gizlilik</div>
   </div>
-  <div class="heroVisual">
-    <div class="glow"></div>
-    <img class="realX8" src="https://www.image2url.com/r2/default/images/1790821930673-c3fa41b5-6a57-41a7-95d4-eb176922a29e.jfif" alt="LORE AUDIO X8 Subwoofer">
-  </div>
-</header>
-
-<section class="specs" id="technology">
-  <div class="spec"><strong>15000</strong><small>RMS Güç</small></div>
-  <div class="spec"><strong>20000</strong><small>Tepe Gücü (W)</small></div>
-  <div class="spec"><strong>6"</strong><small>Alüminyum Bobin</small></div>
-  <div class="spec"><strong>152dB</strong><small>Hassasiyet (1W/1M)</small></div>
-</section>
-
-<section class="explodeWrap" id="inside">
-  <div class="sticky">
-    <div class="explodeTitle">
-      <div class="eyebrow">İÇ MÜHENDİSLİK</div>
-      <h2>DEMONTE<br>MİMARİ</h2>
-      <p>Aşağı kaydırarak LORE AUDIO X8'in yüksek bas basıncı üreten hassas iç katmanlarını ve mühendislik detaylarını inceleyin.</p>
-    </div>
-
-    <div class="explode" id="explodeSub">
-      <div class="part p-frame" style="--dy:-220px">
-        <span class="label l-frame">Dış Çerçeve / Conta</span>
-      </div>
-      <div class="part p-cap" style="--dy:-140px">
-        <div class="cap-brand">LORE <span>AUDIO</span></div>
-        <span class="label l-cap">Göbek Kapağı</span>
-      </div>
-      <div class="part p-cone" style="--dy:-70px">
-        <span class="label l-cone">Ağır Hizmet Konisi</span>
-      </div>
-      <div class="part p-spider" style="--dy:0px">
-        <span class="label l-spider">Çift Örümcek</span>
-      </div>
-      <div class="part p-coil" style="--dy:70px">
-        <span class="label l-coil">6" CCAW Bobin</span>
-      </div>
-      <div class="part p-basket" style="--dy:140px">
-        <span class="label l-basket">Alüminyum Sepet</span>
-      </div>
-      <div class="part p-motor" style="--dy:220px">
-        <span class="label l-motor">Üçlü Mıknatıs Motor</span>
-      </div>
-    </div>
-
-    <div class="explodeInfo">
-      YÜKSEK BAS HASSASİYETİ
-      <b>X8 SERİSİ</b>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="x-series">
-  <div class="sectionHead">
-    <div>
-      <div class="eyebrow">LINEUP</div>
-      <h2>X SERIES</h2>
-    </div>
-    <p>Ekstrem basınç ve yarışma standartları için özel olarak mühendisliği yapılmış X Serisi performans canavarları.</p>
-  </div>
-
-  <div class="x-promo-banner">
-    <img src="https://www.image2url.com/r2/default/images/1790831606439-a22ba8f1-5316-4ff3-bcda-84501024c21f.png" alt="LORE AUDIO X Series Lineup Showcase">
-  </div>
-
-  <div class="x-series-grid">
-    <div class="x-card">
-      <div>
-        <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833112671-69550471-bab7-4089-b492-76cbbdbf87a8.png" alt="LORE AUDIO X6 Subwoofer">
-        <h3>X6 SUBWOOFER</h3>
-        <p style="font-size: 12px; color: #888;">Ekstrem basınç sürücüsü.</p>
-        <ul class="x-specs-list">
-          <li><span>Maksimum Güç:</span> <strong>8.000 WATT</strong></li>
-          <li><span>RMS Güç:</span> <strong>6.000 RMS</strong></li>
-          <li><span>Ses Bobini:</span> <strong>4" Voice Coil</strong></li>
-        </ul>
-      </div>
-      <a class="btn" href="#x6" style="justify-content: center; margin-top: 15px;">İNCELE</a>
-    </div>
-
-    <div class="x-card">
-      <div>
-        <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833129928-cd555ade-82b1-4157-b288-c7f7f14fc03e.png" alt="LORE AUDIO X7 Subwoofer">
-        <h3>X7 SUBWOOFER</h3>
-        <p style="font-size: 12px; color: #888;">Üst düzey dengeli SPL gücü.</p>
-        <ul class="x-specs-list">
-          <li><span>Maksimum Güç:</span> <strong>12.000 WATT</strong></li>
-          <li><span>RMS Güç:</span> <strong>9.000 RMS</strong></li>
-          <li><span>Ses Bobini:</span> <strong>4.5" Voice Coil</strong></li>
-        </ul>
-      </div>
-      <a class="btn" href="#x7" style="justify-content: center; margin-top: 15px;">İNCELE</a>
-    </div>
-
-    <div class="x-card featured">
-      <div class="x-badge">FLAGSHIP</div>
-      <div>
-        <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
-        <h3>X8 SUBWOOFER</h3>
-        <p style="font-size: 12px; color: #888;">Sınırları zorlayan yok edici amiral gemisi.</p>
-        <ul class="x-specs-list">
-          <li><span>Maksimum Güç:</span> <strong>20.000 WATT</strong></li>
-          <li><span>RMS Güç:</span> <strong>15.000 RMS</strong></li>
-          <li><span>Ses Bobini:</span> <strong>6" Voice Coil</strong></li>
-        </ul>
-      </div>
-      <a class="btn" href="#x8" style="justify-content: center; margin-top: 15px;">İNCELE</a>
-    </div>
-  </div>
-</section>
-
-<section class="section product" id="x6">
-  <div class="productImage">
-    <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833112671-69550471-bab7-4089-b492-76cbbdbf87a8.png" alt="LORE AUDIO X6 Subwoofer">
-  </div>
-  <div class="productInfo">
-    <div class="eyebrow">HIGH PERFORMANCE BASS</div>
-    <h2>LORE AUDIO X6</h2>
-    <p>Kendi sınıfının en hırslı modellerinden biri. 4 inç yüksek sıcaklık toleranslı bobin yapısı ve optimize edilmiş soğutma blokları sayesinde uzun süreli bas performansını stabil tutar.</p>
-    <div class="price">$1100</div>
-    <div class="stock"><span class="dot"></span> Çok Yakında Stokta — Hızlı Kargo</div>
-    <div class="qty">
-      <button onclick="changeQtyX6(-1)">-</button>
-      <span id="qtyValX6">1</span>
-      <button onclick="changeQtyX6(1)">+</button>
-    </div>
-    <button class="btn buy" onclick="addToCartX6()">SEPETE EKLE</button>
-    <div class="notice">* Profesyonel montaj ve uygun güçte amfi kullanımı tavsiye edilir. (Amfi: 1 ohM 6000W-8000W)</div>
-    <div class="notice" style="font-size: 12px; color: rgba(255, 59, 24, 0.959); line-height: 1.5; font-family: sans-serif;">
-      <strong style="font-size: 13px; color: #faf7f7; display: block; margin-bottom: 4px;">Technical Features:</strong>
-      <ul style="margin: 0; padding-left: 16px; list-style-type: disc;">
-        <li><strong>RMS Power:</strong> 6000 W</li>
-        <li><strong>Peak Power:</strong> 8000 W</li>
-        <li><strong>Voice Coil:</strong> 4" Voice Coil</li>
-        <li><strong>Xmax (BL 50%):</strong> 28 mm (One Way)</li>
-        <li><strong>Xmax (BL 100%):</strong> 57 mm (One Way)</li>
-        <li><strong>Re:</strong> 1.0 + 1.0 Ω</li>
-        <li><strong>Fs:</strong> 24.8 Hz</li>
-        <li><strong>Qts:</strong> 0.295</li>
-        <li><strong>Sd:</strong> 1150 cm²</li>
-        <li><strong>Vas:</strong> 117 L</li>
-        <li><strong>BL:</strong> 17.4 T·m</li>
-        <li><strong>Sens (1W/1m):</strong> 98.7 dB</li>
-        <li><strong>Sens (2.83Vrms/1m):</strong> 109.2 dB</li>
-        <li><strong>Impedance:</strong> 1.0 + 1.0 Ohm</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section product" id="x7">
-  <div class="productImage">
-    <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833129928-cd555ade-82b1-4157-b288-c7f7f14fc03e.png" alt="LORE AUDIO X7 Subwoofer">
-  </div>
-  <div class="productInfo">
-    <div class="eyebrow">UNMATCHED POWER & PRECISION</div>
-    <h2>LORE AUDIO X7</h2>
-    <p>Ağır hizmet kullanım şartları ve yarışma sistemleri için geliştirildi. 4.5 inç özel sarım bobini ile agresif ısı dağılımı sağlarken en alt frekanslarda bile yüksek bas kontrolü sunar.</p>
-    <div class="price">$2200</div>
-    <div class="stock"><span class="dot"></span> Çok Yakında Stokta — Hızlı Kargo</div>
-    <div class="qty">
-      <button onclick="changeQtyX7(-1)">-</button>
-      <span id="qtyValX7">1</span>
-      <button onclick="changeQtyX7(1)">+</button>
-    </div>
-    <button class="btn buy" onclick="addToCartX7()">SEPETE EKLE</button>
-    <div class="notice">* Profesyonel montaj ve uygun güçte amfi kullanımı tavsiye edilir. (Amfi: 1 ohM 9000W-12000W)</div>
-    <div class="notice" style="font-size: 12px; color: rgba(255, 59, 24, 0.959); line-height: 1.5; font-family: sans-serif;">
-      <strong style="font-size: 13px; color: #faf7f7; display: block; margin-bottom: 4px;">Technical Features:</strong>
-      <ul style="margin: 0; padding-left: 16px; list-style-type: disc;">
-        <li><strong>RMS Power:</strong> 9000 W</li>
-        <li><strong>Peak Power:</strong> 12000 W</li>
-        <li><strong>Voice Coil:</strong> 4.5" Voice Coil</li>
-        <li><strong>Xmax (BL 50%):</strong> 36 mm (One Way)</li>
-        <li><strong>Xmax (BL 100%):</strong> 72 mm (One Way)</li>
-        <li><strong>Re:</strong> 0.7 + 0.7 Ω</li>
-        <li><strong>Fs:</strong> 21.2 Hz</li>
-        <li><strong>Qts:</strong> 0.259</li>
-        <li><strong>Sd:</strong> 1280 cm²</li>
-        <li><strong>Vas:</strong> 148 L</li>
-        <li><strong>BL:</strong> 22.1 T·m</li>
-        <li><strong>Sens (1W/1m):</strong> 113.7 dB</li>
-        <li><strong>Sens (2.83Vrms/1m):</strong> 119.4 dB</li>
-        <li><strong>Impedance:</strong> 0.7 + 0.7 Ohm</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section product" id="x8">
-  <div class="productImage">
-    <img class="realX8" src="https://www.image2url.com/r2/default/images/1790833158380-53034ebf-0df6-41b4-9faa-eb52feb4dc10.png" alt="LORE AUDIO X8 Subwoofer">
-  </div>
-  <div class="productInfo">
-    <div class="eyebrow">DESTROY YOUR CAR AUDIO</div>
-    <h2>LORE AUDIO X8</h2>
-    <p>Rakipleri geride bırakmak için özel olarak üretildi. Yüksek ısılara dayanıklı ses bobini ve esnek örümcek yapısı sayesinde uzun süreli yüksek güç altındaki performansını korur.</p>
-    <div class="price">$2999</div>
-    <div class="stock"><span class="dot"></span> Çok Yakında Stokta — Hızlı Kargo</div>
-    <div class="qty">
-      <button onclick="changeQty(-1)">-</button>
-      <span id="qtyVal">1</span>
-      <button onclick="changeQty(1)">+</button>
-    </div>
-    <button class="btn buy" onclick="addToCart()">SEPETE EKLE</button>
-    <div class="notice">* Profesyonel montaj ve uygun güçte amfi kullanımı tavsiye edilir. (Amfi: 1 ohM 15000W-20000W)</div>
-    <div class="notice" style="font-size: 12px; color: rgba(255, 59, 24, 0.959); line-height: 1.5; font-family: sans-serif;">
-      <strong style="font-size: 13px; color: #faf7f7; display: block; margin-bottom: 4px;">Technical Features:</strong>
-      <ul style="margin: 0; padding-left: 16px; list-style-type: disc;">
-        <li><strong>RMS Power:</strong> 15000 W</li>
-        <li><strong>Peak Power:</strong> 20000 W</li>
-        <li><strong>Xmax (BL 50%):</strong> 42 mm (One Way)</li>
-        <li><strong>Xmax (BL 100%):</strong> 84 mm (One Way)</li>
-        <li><strong>Re:</strong> 0.5 + 0.5 Ω</li>
-        <li><strong>Fs:</strong> 15.6 Hz</li>
-        <li><strong>Qts:</strong> 0.146</li>
-        <li><strong>Sd:</strong> 1392 cm²</li>
-        <li><strong>Vas:</strong> 196 L / 6.93 ft³</li>
-        <li><strong>BL:</strong> 36.9 T·m</li>
-        <li><strong>Sens (1W/1m):</strong> 152.1 dB</li>
-        <li><strong>Sens (2.83Vrms/1m):</strong> 156.4 dB</li>
-        <li><strong>Impedance:</strong> 0.5 + 0.5 Ohm</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div>© 2026 LORE AUDIO. TÜM HAKLARI SAKLIDIR.</div>
-  <div>TESTOSTERONE PERFORMANCE CAR AUDIO SYSTEMS</div>
-</footer>
-
+  <div style="margin-top:14px"><label for="volume-control" style="font-size:12px">🔊 Ses düzeyi <span id="volume-label">70%</span></label><input id="volume-control" type="range" min="0" max="100" value="70" style="width:100%;padding:0;margin-top:8px" oninput="document.getElementById('volume-label').textContent=this.value+'%';localStorage.setItem('wb-volume',this.value)"></div>
+  <div style="margin-top:12px"><label for="brightness-control" style="font-size:12px">☀️ Parlaklık <span id="brightness-label">100%</span></label><input id="brightness-control" type="range" min="55" max="120" value="100" style="width:100%;padding:0;margin-top:8px" oninput="document.getElementById('brightness-label').textContent=this.value+'%';document.documentElement.style.setProperty('--screen-brightness',this.value/100);document.body.style.filter='brightness('+this.value/100+')';localStorage.setItem('wb-brightness',this.value)"></div>
+  <p class="muted" style="margin-top:12px">Wi-Fi/Bluetooth yalnızca bu arayüzde simüle edilir. Ses ve parlaklık kontrolleri de gerçek donanım ayarlarını değiştirmez.</p>
+</div>
+<div id="taskwrap"><div id="taskbar">
+  <div id="startbtn" onclick="toggleStart()"><svg width="20" height="20" viewBox="0 0 100 100"><path fill="white" d="M7 12 46 7v39H7zM54 6l39-6v46H54zM7 54h39v39L7 88zM54 54h39v46l-39-6z"/></svg></div>
+  <div style="height:25px;width:1px;background:#ffffff25"></div><div id="tbapps"></div>
+  <div style="height:25px;width:1px;background:#ffffff25"></div><button title="Bildirimler ve izinler" onclick="openApp('privacy')" style="padding:8px 10px">🔔</button><div id="clock" onclick="toggleQuick()">🔊 📶 <span id="time">00:00</span></div>
+</div></div>
+<div id="permission-overlay" class="permission-overlay"><div class="permission-card"><div style="font-size:34px;margin-bottom:10px">🔔</div><h2>Wild Berry izinleri</h2><p>Bildirimleri açmak ister misin? İzin isteği yalnızca düğmeye bastığında tarayıcıya gönderilir. Konum, kamera ve mikrofon izinleri kapalı kalır; bunları daha sonra Gizlilik ve İzinler bölümünden ayrı ayrı yönetebilirsin.</p><div class="permission-actions"><button onclick="dismissPermissionPrompt()">Şimdi değil</button><button class="accent" onclick="dismissPermissionPrompt();openApp('privacy');requestNotifications()">Bildirim iznini yönet</button></div></div></div><div id="toast"></div>
 <script>
-window.addEventListener('scroll', () => {
-  const wrap = document.getElementById('inside');
-  const rect = wrap.getBoundingClientRect();
-  const total = wrap.offsetHeight - window.innerHeight;
-  let progress = -rect.top / total;
-  
-  if (progress < 0) progress = 0;
-  if (progress > 1) progress = 1;
-  
-  document.getElementById('explodeSub').style.setProperty('--p', progress);
-});
-
-let cart = 0;
-
-let qty = 1;
-function changeQty(v) {
-  qty += v;
-  if (qty < 1) qty = 1;
-  document.getElementById('qtyVal').innerText = qty;
+const apps={
+ pc:['💻','Bu Bilgisayar'],browser:['🌐','Berry Browser'],store:['🛍️','Uygulama Merkezi'],files:['📁','Dosya Gezgini'],terminal:['⌨️','Terminal'],editor:['📝','Metin Editörü'],paint:['🎨','Wild Paint'],calc:['🧮','Hesap Makinesi'],media:['🎵','Medya Merkezi'],calendar:['📅','Takvim'],tasks:['☑️','Görevler'],settings:['⚙️','Ayarlar'],privacy:['🛡️','Gizlilik ve İzinler'],snake:['🐍','Yılan Oyunu'],spacegame:['🚀','Uzay Savaşı']
+};
+const windows={},filesDB=JSON.parse(localStorage.getItem('wb-files')||'null')||[
+{name:'SistemLoglari.txt',content:'Windows 12 Wild Berry\\n[OK] Arayüz başlatıldı\\n[OK] Masaüstü hazır'}, {name:'Notlar.txt',content:'Wild Berry notların burada.'}
+];
+function persist(){localStorage.setItem('wb-files',JSON.stringify(filesDB))}
+function toast(t){let el=document.getElementById('toast');el.textContent=t;el.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display='none',2300)}
+function toggleStart(){document.getElementById('startmenu').classList.toggle('show');document.getElementById('quick').classList.remove('show')}
+function toggleQuick(){document.getElementById('quick').classList.toggle('show');document.getElementById('startmenu').classList.remove('show')}
+function restartSystem(){location.reload()}
+function toggleQuickSetting(el,label){let on=el.dataset.on!=='1';el.dataset.on=on?'1':'0';el.style.borderColor=on?'var(--accent)':'';let small=el.querySelector('small');if(small)small.textContent=on?'Açık':'Kapalı';localStorage.setItem('wb-'+el.dataset.setting,on?'1':'0');toast(label+(on?' açıldı':' kapatıldı')+' (arayüz simülasyonu)')}
+function toggleFocus(el){let on=el.dataset.on!=='1';el.dataset.on=on?'1':'0';el.style.borderColor=on?'var(--accent)':'';el.querySelector('small').textContent=on?'Açık':'Kapalı';document.querySelectorAll('.widget').forEach(w=>w.style.opacity=on?'.18':'1');localStorage.setItem('wb-focus',on?'1':'0');toast(on?'Odak modu açık':'Odak modu kapalı')}
+function toggleNight(el){let on=el.dataset.on!=='1';el.dataset.on=on?'1':'0';el.style.borderColor=on?'var(--accent)':'';el.querySelector('small').textContent=on?'Açık':'Kapalı';document.body.style.filter=on?'sepia(.22) brightness(.86)':'';localStorage.setItem('wb-night',on?'1':'0');toast(on?'Gece ışığı açıldı':'Gece ışığı kapatıldı')}
+function filterApps(q){document.querySelectorAll('.startapp').forEach(e=>e.style.display=e.textContent.toLowerCase().includes(q.toLowerCase())?'flex':'none')}
+function renderStart(){document.getElementById('appgrid').innerHTML=Object.entries(apps).map(([id,a])=>`<div class="startapp" onclick="openApp('${id}');toggleStart()"><b>${a[0]}</b><span>${a[1]}</span></div>`).join('')}
+renderStart();
+function openApp(id,data=null){
+ if(windows[id]){windows[id].classList.remove('min');windows[id].style.zIndex=++z; if(id==='editor'&&data!==null)document.getElementById('editor-text').value=data;return}
+ const w=document.createElement('div');w.className='window';w.id='win-'+id;w.style.zIndex=++z;w.style.left=(12+Math.random()*12)+'%';w.style.top=(8+Math.random()*10)+'%';
+ let title=apps[id]?.[1]||'Uygulama',body='',size=['850px','560px'];
+ const btn=(label,fn)=>`<button onclick="${fn}">${label}</button>`;
+ switch(id){
+ case'pc':case'files':body=`<div class="row"><input id="newfile-name" placeholder="Yeni dosya adı.txt" class="grow">${btn('＋ Dosya oluştur',"createFile()")}<label class="card" style="padding:8px">Dosya yükle<input type="file" hidden onchange="uploadFile(event)"></label></div><div class="cardgrid" id="file-list"></div><p class="muted">Dosyalar bu tarayıcıda localStorage ile saklanır; gerçek C: sürücüsüne erişilmez.</p>`;size=['650px','440px'];break;
+ case'browser':body=`<div class="browserbar"><button title="Geri" onclick="browserBack()">←</button><button title="İleri" onclick="browserForward()">→</button><button title="Ana sayfa" onclick="browserHome()">⌂</button><input id="browser-url" value="" placeholder="Ara veya adres yaz (ör. uzay haberleri / youtube.com)" onkeydown="if(event.key==='Enter')browse()"><button title="Yenile" onclick="browse()">⟳</button><button class="accent" onclick="browse()">Git ↗</button></div><div class="browser-home" id="browser-home"><div class="browser-logo">🌐</div><h2 style="font-size:28px">Berry Browser</h2><p class="muted">Hızlı, sade ve Wild Berry tarzında web merkezi.</p><div class="browser-search"><input id="browser-home-search" placeholder="Google'da ara veya bir siteye git..." onkeydown="if(event.key==='Enter'){document.getElementById('browser-url').value=this.value;browse()}"><button class="accent" onclick="document.getElementById('browser-url').value=document.getElementById('browser-home-search').value;browse()">Ara</button></div><div class="browser-shortcuts"><button onclick="browserSearchEngine('google')">🔎 Google</button><button onclick="browserSearchEngine('bing')">🟦 Bing</button><button onclick="browserSearchEngine('duck')">🦆 DuckDuckGo</button><button onclick="browserSearchYouTube()">▶ YouTube</button></div><div class="browser-history" id="browser-bookmarks"></div><div class="muted">Son aramalar ve favoriler bu cihazda saklanır.</div></div><div class="row" style="flex-wrap:wrap"><button onclick="browserBookmark()">☆ Favorilere ekle</button><button onclick="browserOpenHistory()">🕘 Son aramalar</button><button onclick="openApp('privacy')">🛡️ Site izinleri</button></div><div class="browser-status"><span id="browser-status-text">Hazır · Arama yalnızca Berry Browser üzerinden başlatılır.</span><span>🌐 İnternet erişimi: varsayılan tarayıcı</span></div><div class="browserhint">Tek HTML dosyası tam bir Chrome/Edge motoru içermez. Arama ve siteler, güvenlik ve site uyumluluğu için bilgisayarındaki varsayılan tarayıcıda yeni sekmede açılır.</div>`;size=['980px','650px'];break;
+ case'store':body=`<h3>Uygulama Merkezi</h3><p class="muted">Wild Berry ile gelen uygulamalar — yükleme gerektirmeyen yerleşik araçlar.</p><div class="cardgrid">${Object.entries(apps).filter(([k])=>k!=='store').map(([k,a])=>`<div class="card" onclick="openApp('${k}')"><strong>${a[0]} ${a[1]}</strong><span class="muted">Açmak için tıkla</span></div>`).join('')}</div>`;size=['700px','520px'];break;
+ case'terminal':body=`<div class="term" id="term-log">Windows 12 Wild Berry Shell [Build 2026.10]\\n'help' komutuyla başlayın.\\n</div><div class="row"><span style="font:12px Consolas">WB&gt;</span><input class="grow" id="term-input" onkeydown="terminalKey(event)" placeholder="Komut yaz..."></div>`;size=['650px','420px'];break;
+ case'editor':body=`<div class="row"><input id="editor-name" value="YeniNot.txt" class="grow" placeholder="Dosya adı"><button onclick="saveEditor()">💾 Kaydet</button><button onclick="downloadEditor()">İndir</button></div><textarea id="editor-text" style="flex:1;min-height:250px;background:#08020f;color:#00f2fe;font:13px Consolas" placeholder="Metin veya kod yaz..."></textarea>`;size=['650px','470px'];if(data!==null)setTimeout(()=>{let e=document.getElementById('editor-text');if(e)e.value=data},20);break;
+ case'paint':body=`<div class="row"><input type="color" id="paint-color" value="#ff2a7a"><input type="range" id="paint-size" min="1" max="30" value="5"><button onclick="clearPaint()">Temizle</button><button onclick="savePaint()">PNG indir</button></div><canvas id="paint-canvas" width="700" height="380" style="background:white;border-radius:10px;max-width:100%;cursor:crosshair;touch-action:none"></canvas>`;size=['760px','520px'];break;
+ case'calc':body=`<input id="calc-display" value="0" readonly style="font-size:25px;text-align:right"><div class="calcgrid">${['7','8','9','÷','4','5','6','×','1','2','3','−','C','0','.','=','+','−','×','÷'].map(v=>`<button onclick="calcPress('${v}')">${v}</button>`).join('')}</div>`;size=['310px','430px'];break;
+ case'media':body=`<div style="text-align:center;padding:25px"><div style="font-size:65px">🎧</div><h3>Medya Merkezi</h3><p class="muted">Yerel ses veya video dosyası oynat</p><input type="file" accept="audio/*,video/*" onchange="loadMedia(event)"><video id="media-player" controls style="width:100%;max-height:270px;display:none"></video><audio id="audio-player" controls style="width:100%;display:none"></audio></div>`;size=['500px','400px'];break;
+ case'calendar':body=`<h3 id="cal-title"></h3><input type="date" id="calendar-date"><p class="muted">Tarih seçebilir ve günü kontrol edebilirsin.</p><div id="calendar-now"></div>`;size=['400px','300px'];break;
+ case'tasks':body=`<div class="row"><input id="task-input" class="grow" placeholder="Yeni görev..." onkeydown="if(event.key==='Enter')addTask()"><button onclick="addTask()">Ekle</button></div><div id="task-list"></div>`;size=['450px','400px'];break;
+ case'settings':body=`<h3>🎨 Görünüm ve sistem</h3><div class="cardgrid"><div class="card" onclick="wall('berry')"><strong>🍓 Wild Berry</strong></div><div class="card" onclick="wall('aurora')"><strong>🌌 Aurora</strong></div><div class="card" onclick="wall('cyber')"><strong>⚡ Cyberpunk</strong></div><div class="card" onclick="wall('dark')"><strong>🌑 Minimal Dark</strong></div></div><div class="row"><label>Vurgu rengi</label><input type="color" value="#ff2a7a" onchange="accent(this.value);localStorage.setItem('wb-accent',this.value)"></div><div class="row"><label>Görev çubuğu</label><select onchange="document.getElementById('taskwrap').style.justifyContent=this.value;localStorage.setItem('wb-taskpos',this.value)"><option value="center">Ortada</option><option value="flex-start">Solda</option><option value="flex-end">Sağda</option></select></div><div class="cardgrid"><div class="card" onclick="openApp('privacy')"><strong>🛡️ Gizlilik ve izinler</strong><span class="muted">Bildirim, konum, kamera ve mikrofon</span></div><div class="card" onclick="browserHome();openApp('browser')"><strong>🌐 Berry Browser</strong><span class="muted">Web araması ve favoriler</span></div></div><p class="muted">Bu ayarlar HTML simülasyonuna uygulanır; gerçek Windows sistem ayarlarını değiştirmez.</p>`;size=['520px','490px'];break;
+ case'privacy':body=`<h3>🛡️ Gizlilik ve izinler</h3><p class="muted">İzinler varsayılan olarak kapalıdır. Her işlem yalnızca düğmeye bastığında istenir.</p><div class="cardgrid"><div class="card"><strong>🔔 Bildirimler</strong><p class="muted">Sistem bildirimlerine izin ver.</p><button onclick="requestNotifications()">İzin iste</button></div><div class="card"><strong>📍 Konum</strong><p class="muted">Konum bilgisi paylaşımını test et.</p><button onclick="requestLocation()">İzin iste</button></div><div class="card"><strong>🎙️ Mikrofon</strong><p class="muted">Mikrofon erişimi yalnızca kullanıcı isteğiyle.</p><button onclick="requestMedia('audio')">İzin iste</button></div><div class="card"><strong>📷 Kamera</strong><p class="muted">Kamera erişimi yalnızca kullanıcı isteğiyle.</p><button onclick="requestMedia('video')">İzin iste</button></div><div class="card"><strong>📋 Pano</strong><p class="muted">Pano API'si destekleniyorsa izin/erişim iste.</p><button onclick="requestClipboard()">Kontrol et</button></div></div><p id="permission-status" class="muted">Henüz izin istenmedi.</p><p class="muted">Tarayıcı güvenlik kuralları nedeniyle bazı izinler HTTPS veya localhost ister. Bu HTML dosyası Windows ayarlarını veya sistem izinlerini sessizce değiştiremez.</p>`;size=['600px','500px'];break;
+ case'snake':body=`<canvas id="snake-canvas" width="320" height="320" style="display:block;margin:auto;background:#08020f;border:1px solid var(--accent);border-radius:10px"></canvas><p class="muted">Yön tuşlarıyla oyna. Oyun alanına tıkla ve tuşları kullan.</p>`;size=['370px','420px'];break;
+ case'spacegame':body=`<canvas id="space-canvas" width="600" height="360" style="max-width:100%;background:#03010a;border:1px solid var(--accent);border-radius:10px"></canvas><p class="muted">A/D veya ←/→ hareket, Space ateş.</p>`;size=['650px','460px'];break;
+ }
+ w.innerHTML=`<div class="whead" onmousedown="dragWindow(event,'${id}')"><div class="wtitle">${title}</div><div class="wcontrols"><button class="minb" title="Küçült" onclick="minApp('${id}')"></button><button class="maxb" title="Büyüt" onclick="maxApp('${id}')"></button><button class="closeb" title="Kapat" onclick="closeApp('${id}')"></button></div></div><div class="wbody">${body}</div>`;
+ w.style.width=size[0];w.style.height=size[1];document.body.appendChild(w);windows[id]=w;
+ const t=document.createElement('div');t.className='tbapp active';t.id='tb-'+id;t.textContent=apps[id][0];t.title=title;t.onclick=()=>{if(w.classList.contains('min'))w.classList.remove('min');else w.classList.add('min');w.style.zIndex=++z};document.getElementById('tbapps').appendChild(t);
+ if(id==='pc'||id==='files')renderFiles();if(id==='browser')renderBrowserBookmarks();if(id==='paint')initPaint();if(id==='snake')initSnake();if(id==='spacegame')initSpace();if(id==='calendar')initCalendar();if(id==='tasks')renderTasks();
 }
-function addToCart() {
-  cart += qty;
-  document.getElementById('cartCount').innerText = cart;
-  alert('X8 sepete eklendi!');
-}
-
-let qtyX7 = 1;
-function changeQtyX7(v) {
-  qtyX7 += v;
-  if (qtyX7 < 1) qtyX7 = 1;
-  document.getElementById('qtyValX7').innerText = qtyX7;
-}
-function addToCartX7() {
-  cart += qtyX7;
-  document.getElementById('cartCount').innerText = cart;
-  alert('X7 sepete eklendi!');
-}
-
-let qtyX6 = 1;
-function changeQtyX6(v) {
-  qtyX6 += v;
-  if (qtyX6 < 1) qtyX6 = 1;
-  document.getElementById('qtyValX6').innerText = qtyX6;
-}
-function addToCartX6() {
-  cart += qtyX6;
-  document.getElementById('cartCount').innerText = cart;
-  alert('X6 sepete eklendi!');
-}
+let z=1000;
+function closeApp(id){windows[id]?.remove();delete windows[id];document.getElementById('tb-'+id)?.remove()}
+function minApp(id){windows[id]?.classList.add('min')}
+function maxApp(id){let w=windows[id];if(!w)return;if(w.dataset.max==='1'){w.style.left=w.dataset.left;w.style.top=w.dataset.top;w.style.width=w.dataset.width;w.style.height=w.dataset.height;w.dataset.max='0'}else{w.dataset.left=w.style.left;w.dataset.top=w.style.top;w.dataset.width=w.style.width;w.dataset.height=w.style.height;w.style.left='0';w.style.top='0';w.style.width='100vw';w.style.height='calc(100vh - 68px)';w.dataset.max='1'}w.classList.remove('min')}
+function dragWindow(e,id){if(e.target.tagName==='BUTTON')return;let w=windows[id];w.style.zIndex=++z;let x=e.clientX-w.offsetLeft,y=e.clientY-w.offsetTop;function move(ev){w.style.left=Math.max(0,ev.clientX-x)+'px';w.style.top=Math.max(0,ev.clientY-y)+'px'}function up(){document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up)}document.addEventListener('mousemove',move);document.addEventListener('mouseup',up)}
+let browserHistory=JSON.parse(localStorage.getItem('wb-browser-history')||'[]'),browserIndex=-1;
+function normalizeWebInput(raw){let v=String(raw||'').trim();if(!v)return '';if(/^https?:\/\//i.test(v))return v;if(/^[\w.-]+\.[a-z]{2,}(?::\d+)?(?:\/.*)?$/i.test(v)&&!v.includes(' '))return 'https://'+v;return 'https://www.google.com/search?q='+encodeURIComponent(v)}
+function openBrowserURL(url,label){if(!url)return;let win=window.open(url,'_blank');if(!win){toast('Yeni sekme engellendi. Tarayıcının açılır pencere iznini kontrol et.');return}try{win.opener=null}catch(e){}browserHistory.unshift({label:label||url,url,time:new Date().toLocaleString('tr-TR')});browserHistory=browserHistory.slice(0,30);localStorage.setItem('wb-browser-history',JSON.stringify(browserHistory));browserIndex=0;let st=document.getElementById('browser-status-text');if(st)st.textContent='Açıldı: '+(label||url);renderBrowserBookmarks();toast('Berry Browser isteği yeni sekmede açtı.')}
+function browse(){const inp=document.getElementById('browser-url');const raw=inp?.value.trim();if(!raw)return toast('Bir arama veya adres yaz.');const url=normalizeWebInput(raw);openBrowserURL(url,raw);const home=document.getElementById('browser-home-search');if(home)home.value=raw}
+function searchWeb(q){let inp=document.getElementById('browser-url');let query=(q||inp?.value||'').trim();if(!query)return toast('Aramak için bir kelime yaz.');if(inp)inp.value=query;openBrowserURL('https://www.google.com/search?q='+encodeURIComponent(query),'Google: '+query)}
+function browserSearchEngine(engine){let inp=document.getElementById('browser-url'),home=document.getElementById('browser-home-search');let q=(home?.value||inp?.value||'').trim();if(!q){toast('Önce arama kelimesi yaz.');(home||inp)?.focus();return}if(inp)inp.value=q;let base=engine==='bing'?'https://www.bing.com/search?q=':engine==='duck'?'https://duckduckgo.com/?q=':'https://www.google.com/search?q=';openBrowserURL(base+encodeURIComponent(q),(engine==='bing'?'Bing':engine==='duck'?'DuckDuckGo':'Google')+': '+q)}
+function browserSearchYouTube(){let home=document.getElementById('browser-home-search'),inp=document.getElementById('browser-url');let q=(home?.value||inp?.value||'').trim();if(!q){q=prompt('YouTube’da ne aramak istiyorsun?','');if(q===null)return;q=q.trim()}if(!q)return toast('Arama kelimesi yazılmadı.');if(inp)inp.value=q;openBrowserURL('https://www.youtube.com/results?search_query='+encodeURIComponent(q),'YouTube: '+q)}
+function searchYouTube(){browserSearchYouTube()}
+function goYouTube(){openBrowserURL('https://www.youtube.com/','YouTube')}
+function openExternal(){browse()}
+function browserBack(){if(browserHistory.length>1){let item=browserHistory[1];openBrowserURL(item.url,item.label)}else toast('Bu oturumda geri gidilecek sayfa yok.')}
+function browserForward(){toast('Berry Browser dış sekmede açıldığı için ileri gezinme, açılan tarayıcının kendi düğmesiyle yapılır.')}
+function browserHome(){let inp=document.getElementById('browser-url'),home=document.getElementById('browser-home-search');if(inp)inp.value='';if(home)home.value='';let h=document.getElementById('browser-home');if(h)h.style.display='flex';let st=document.getElementById('browser-status-text');if(st)st.textContent='Ana sayfa · Hazır'}
+function browserBookmark(){let inp=document.getElementById('browser-url');let raw=inp?.value.trim();if(!raw)return toast('Önce bir adres aç.');let url=normalizeWebInput(raw);let list=JSON.parse(localStorage.getItem('wb-browser-bookmarks')||'[]');if(!list.some(x=>x.url===url)){list.unshift({label:raw,url});localStorage.setItem('wb-browser-bookmarks',JSON.stringify(list.slice(0,20)))}renderBrowserBookmarks();toast('Favorilere eklendi.')}
+function renderBrowserBookmarks(){let el=document.getElementById('browser-bookmarks');if(!el)return;let list=JSON.parse(localStorage.getItem('wb-browser-bookmarks')||'[]');el.innerHTML=list.map((x,i)=>`<button onclick="openBrowserURL('${x.url.replace(/'/g,'%27')}','${escapeHTML(x.label).replace(/'/g,'&#39;')}')">☆ ${escapeHTML(x.label.slice(0,24))}</button>`).join('')}
+function browserOpenHistory(){let list=JSON.parse(localStorage.getItem('wb-browser-history')||'[]');if(!list.length)return toast('Henüz arama geçmişi yok.');let html=list.slice(0,12).map(x=>`${x.time} — ${x.label}`).join('\n');alert('Berry Browser — Son aramalar\n\n'+html)}
+function requestNotifications(){if(!('Notification'in window)){setPermissionStatus('Bu tarayıcıda bildirim API’si desteklenmiyor.');return}if(!window.isSecureContext){setPermissionStatus('Bildirim izni için dosyayı HTTPS veya localhost üzerinden açmak gerekebilir.');return}Notification.requestPermission().then(p=>{setPermissionStatus('Bildirim izni: '+p);if(p==='granted'){new Notification('Wild Berry OS',{body:'Bildirimler etkinleştirildi.'});toast('Bildirim izni verildi.')}else toast('Bildirim izni verilmedi.')}).catch(()=>setPermissionStatus('İzin isteği tamamlanamadı.'))}
+function setPermissionStatus(t){let e=document.getElementById('permission-status');if(e)e.textContent=t;toast(t)}
+function requestLocation(){if(!navigator.geolocation)return setPermissionStatus('Konum API’si desteklenmiyor.');navigator.geolocation.getCurrentPosition(p=>setPermissionStatus('Konum izni verildi. Koordinatlar: '+p.coords.latitude.toFixed(3)+', '+p.coords.longitude.toFixed(3)),e=>setPermissionStatus('Konum erişimi reddedildi veya kullanılamıyor: '+e.message),{timeout:8000})}
+async function requestMedia(kind){if(!navigator.mediaDevices?.getUserMedia)return setPermissionStatus('Kamera/mikrofon erişimi için HTTPS veya localhost ve desteklenen tarayıcı gerekir.');try{let stream=await navigator.mediaDevices.getUserMedia({audio:kind==='audio',video:kind==='video'});stream.getTracks().forEach(t=>t.stop());setPermissionStatus((kind==='audio'?'Mikrofon':'Kamera')+' izni verildi. Test tamamlandı; akış kapatıldı.')}catch(e){setPermissionStatus('Erişim verilmedi: '+(e.message||e.name))}}
+async function requestClipboard(){try{if(!navigator.clipboard?.readText)return setPermissionStatus('Pano okuma bu ortamda desteklenmiyor.');let value=await navigator.clipboard.readText();setPermissionStatus('Pano erişimi çalıştı. Okunan karakter sayısı: '+value.length)}catch(e){setPermissionStatus('Pano erişimi reddedildi veya tarayıcı bu dosyaya izin vermiyor.')}}
+function showPermissionPrompt(){if(localStorage.getItem('wb-permission-prompted'))return;localStorage.setItem('wb-permission-prompted','1');let el=document.getElementById('permission-overlay');if(el)el.classList.add('show')}
+function dismissPermissionPrompt(){document.getElementById('permission-overlay')?.classList.remove('show')}
+function openPrivacy(){dismissPermissionPrompt();openApp('privacy')}
+function renderFiles(){let el=document.getElementById('file-list');if(!el)return;el.innerHTML=filesDB.map((f,i)=>`<div class="card"><strong>📄 ${escapeHTML(f.name)}</strong><p class="muted">${f.content.length} karakter</p><div class="row" style="margin-top:8px"><button onclick="openApp('editor',filesDB[${i}].content)">Aç</button><button onclick="deleteFile(${i})">Sil</button></div></div>`).join('')||'<p class="muted">Dosya yok.</p>'}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function createFile(){let n=document.getElementById('newfile-name').value.trim();if(!n)return toast('Dosya adı gir.');filesDB.push({name:n,content:''});persist();renderFiles()}
+function deleteFile(i){filesDB.splice(i,1);persist();renderFiles()}
+function uploadFile(e){let f=e.target.files[0];if(!f)return;if(f.size>2e6)return toast('Demo için dosya sınırı 2 MB.');let r=new FileReader();r.onload=()=>{filesDB.push({name:f.name,content:String(r.result)});persist();renderFiles();toast('Dosya eklendi')};r.readAsText(f)}
+function saveEditor(){let n=document.getElementById('editor-name').value||'YeniNot.txt',c=document.getElementById('editor-text').value;let i=filesDB.findIndex(f=>f.name===n);if(i>=0)filesDB[i].content=c;else filesDB.push({name:n,content:c});persist();toast('Dosya bu tarayıcıya kaydedildi')}
+function downloadEditor(){let c=document.getElementById('editor-text').value,n=document.getElementById('editor-name').value||'not.txt';download(n,c,'text/plain;charset=utf-8')}
+function download(name,content,type){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function terminalKey(e){if(e.key!=='Enter')return;let input=document.getElementById('term-input'),log=document.getElementById('term-log'),c=input.value.trim(),out='';if(c==='help')out='help, clear, date, ver, dir, whoami, restart';else if(c==='clear'){log.textContent='';input.value='';return}else if(c==='date')out=new Date().toLocaleString();else if(c==='ver')out='Windows 12 Wild Berry [Build 2026.10]';else if(c==='dir')out=filesDB.map(f=>f.name).join('\\n')||'Klasör boş';else if(c==='whoami')out='WildBerry\\Administrator (demo)';else if(c==='restart')return restartSystem();else if(c)out=`'${c}' tanınmayan bir komut.`;log.textContent+=`\\nWB> ${c}\\n${out}\\n`;input.value='';log.scrollTop=log.scrollHeight}
+let expr='';function calcPress(v){let d=document.getElementById('calc-display');if(!d)return;if(v==='C'){expr='';d.value='0';return}if(v==='='){try{if(!/^[0-9+*/(). ×÷−-]+$/.test(expr))throw 0;let safe=expr.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-');if(!safe.trim())return;let result=Function('"use strict";return ('+safe+')')();if(!Number.isFinite(result))throw 0;expr=String(result);d.value=expr}catch{d.value='Hata';expr=''}return}expr+=v;d.value=expr}
+function accent(c){document.documentElement.style.setProperty('--accent',c);document.documentElement.style.setProperty('--glow',c+'66')}
+function wall(w){document.body.style.background=w==='aurora'?'linear-gradient(135deg,#050515,#120b2e,#00a8b8,#4facfe)':w==='cyber'?'linear-gradient(45deg,#0d001a,#2a0036,#ff0055,#ffcc00)':w==='dark'?'linear-gradient(135deg,#1a1a24,#08080c)':'radial-gradient(ellipse at 18% 15%,#ff2a75 0,#3a0050 38%,#0d001a 78%)'}
+function initPaint(){let c=document.getElementById('paint-canvas');if(!c)return;let ctx=c.getContext('2d'),down=false;c.onpointerdown=e=>{down=true;c.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(e.offsetX,e.offsetY)};c.onpointerup=()=>down=false;c.onpointermove=e=>{if(!down)return;ctx.strokeStyle=document.getElementById('paint-color').value;ctx.lineWidth=document.getElementById('paint-size').value;ctx.lineCap='round';ctx.lineTo(e.offsetX,e.offsetY);ctx.stroke()}}
+function clearPaint(){let c=document.getElementById('paint-canvas');c?.getContext('2d').clearRect(0,0,c.width,c.height)}
+function savePaint(){let c=document.getElementById('paint-canvas');let a=document.createElement('a');a.download='wild-paint.png';a.href=c.toDataURL('image/png');a.click()}
+let snakeTimer,spaceTimer;
+function initSnake(){let c=document.getElementById('snake-canvas');if(!c)return;clearInterval(snakeTimer);let ctx=c.getContext('2d'),s=[{x:10,y:10}],food={x:15,y:15},dx=1,dy=0;window.onkeydown=e=>{if(e.key==='ArrowUp'&&dy===0){dx=0;dy=-1}if(e.key==='ArrowDown'&&dy===0){dx=0;dy=1}if(e.key==='ArrowLeft'&&dx===0){dx=-1;dy=0}if(e.key==='ArrowRight'&&dx===0){dx=1;dy=0}};snakeTimer=setInterval(()=>{if(!document.getElementById('snake-canvas'))return clearInterval(snakeTimer);let h={x:s[0].x+dx,y:s[0].y+dy};if(h.x<0||h.x>=20||h.y<0||h.y>=20||s.some(p=>p.x===h.x&&p.y===h.y)){s=[{x:10,y:10}];dx=1;dy=0;return}s.unshift(h);if(h.x===food.x&&h.y===food.y)food={x:Math.random()*20|0,y:Math.random()*20|0};else s.pop();ctx.fillStyle='#08020f';ctx.fillRect(0,0,320,320);ctx.fillStyle='#00f2fe';ctx.fillRect(food.x*16,food.y*16,13,13);ctx.fillStyle='#ff2a7a';s.forEach(p=>ctx.fillRect(p.x*16,p.y*16,13,13))},130)}
+function initSpace(){let c=document.getElementById('space-canvas');if(!c)return;clearInterval(spaceTimer);let ctx=c.getContext('2d'),x=280,bullets=[],enemies=[],score=0,keys={};window.onkeydown=e=>keys[e.key.toLowerCase()]=true;window.onkeyup=e=>keys[e.key.toLowerCase()]=false;spaceTimer=setInterval(()=>{if(!document.getElementById('space-canvas'))return clearInterval(spaceTimer);if(keys.arrowleft||keys.a)x=Math.max(0,x-5);if(keys.arrowright||keys.d)x=Math.min(c.width-35,x+5);if(keys[' ']&&bullets.length<8)bullets.push({x:x+16,y:320});if(Math.random()<.035)enemies.push({x:Math.random()*(c.width-24),y:-20});ctx.fillStyle='#03010a';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#00f2fe';ctx.beginPath();ctx.moveTo(x+17,315);ctx.lineTo(x,345);ctx.lineTo(x+34,345);ctx.fill();ctx.fillStyle='#ff2a7a';bullets.forEach(b=>{b.y-=8;ctx.fillRect(b.x,b.y,4,10)});enemies.forEach((e,i)=>{e.y+=2.4;ctx.fillStyle='#ffcc00';ctx.fillRect(e.x,e.y,22,22);bullets.forEach((b,j)=>{if(b.x>e.x&&b.x<e.x+22&&b.y>e.y&&b.y<e.y+22){enemies.splice(i,1);bullets.splice(j,1);score+=10}})});bullets=bullets.filter(b=>b.y>0);enemies=enemies.filter(e=>e.y<c.height);ctx.fillStyle='white';ctx.font='13px Segoe UI';ctx.fillText('SKOR: '+score,12,20)},1000/60)}
+function loadMedia(e){let f=e.target.files[0];if(!f)return;let el=f.type.startsWith('video')?document.getElementById('media-player'):document.getElementById('audio-player');el.src=URL.createObjectURL(f);el.style.display='block';el.play().catch(()=>{})}
+function initCalendar(){let d=new Date();document.getElementById('cal-title').textContent=d.toLocaleDateString('tr-TR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.getElementById('calendar-date').value=d.toISOString().slice(0,10);document.getElementById('calendar-now').textContent='Bugün: '+d.toLocaleDateString('tr-TR')}
+function addTask(){let i=document.getElementById('task-input');if(!i?.value.trim())return;let tasks=JSON.parse(localStorage.getItem('wb-tasks')||'[]');tasks.push(i.value.trim());localStorage.setItem('wb-tasks',JSON.stringify(tasks));i.value='';renderTasks()}
+function renderTasks(){let el=document.getElementById('task-list');if(!el)return;let tasks=JSON.parse(localStorage.getItem('wb-tasks')||'[]');el.innerHTML=tasks.map((t,i)=>`<div class="card row"><span class="grow">${escapeHTML(t)}</span><button onclick="removeTask(${i})">✓</button></div>`).join('')}
+function removeTask(i){let t=JSON.parse(localStorage.getItem('wb-tasks')||'[]');t.splice(i,1);localStorage.setItem('wb-tasks',JSON.stringify(t));renderTasks()}
+document.getElementById('widget-note').value=localStorage.getItem('wb-note')||'';document.getElementById('widget-note').addEventListener('input',e=>localStorage.setItem('wb-note',e.target.value));
+document.getElementById('time').textContent=new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'});setInterval(()=>document.getElementById('time').textContent=new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'}),1000);
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('boot').classList.add('hide'),1800);setTimeout(showPermissionPrompt,2400);let a=localStorage.getItem('wb-accent');if(a)accent(a);let p=localStorage.getItem('wb-taskpos');if(p)document.getElementById('taskwrap').style.justifyContent=p;let v=localStorage.getItem('wb-volume');if(v!==null){document.getElementById('volume-control').value=v;document.getElementById('volume-label').textContent=v+'%'}let b=localStorage.getItem('wb-brightness');if(b!==null){document.getElementById('brightness-control').value=b;document.getElementById('brightness-label').textContent=b+'%';document.body.style.filter='brightness('+b/100+')'}document.querySelectorAll('.quick-toggle').forEach(el=>{let on=localStorage.getItem('wb-'+el.dataset.setting)==='1';el.dataset.on=on?'1':'0';el.style.borderColor=on?'var(--accent)':'';let sm=el.querySelector('small');if(sm)sm.textContent=on?'Açık':'Kapalı'});let focus=localStorage.getItem('wb-focus')==='1';if(focus){document.querySelector('[data-setting="focus"]').dataset.on='1';document.querySelector('[data-setting="focus"] small').textContent='Açık';document.querySelectorAll('.widget').forEach(w=>w.style.opacity='.18')}let night=localStorage.getItem('wb-night')==='1';if(night){document.querySelector('[data-setting="night"]').dataset.on='1';document.querySelector('[data-setting="night"] small').textContent='Açık';document.body.style.filter='sepia(.22) brightness(.86)'}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('startmenu').classList.remove('show');document.getElementById('quick').classList.remove('show')}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();toggleStart();document.getElementById('startsearch').focus()}if(e.key==='F1'){e.preventDefault();openApp('store')}if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='b'){e.preventDefault();openApp('browser')}if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='n'){e.preventDefault();openApp('editor')}if(e.key==='F2'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){toast('Kısayollar: Ctrl+K başlat menüsü · Ctrl+Shift+B Berry Browser · Ctrl+Shift+N not defteri · F1 uygulama merkezi')}});
 </script>
 </body>
 </html>
